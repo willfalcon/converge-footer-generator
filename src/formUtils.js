@@ -1,4 +1,5 @@
 import React, { useState, createContext, useContext } from 'react';
+import { isPossiblePhoneNumber } from 'libphonenumber-js';
 
 function useForm(initial = {}) {
   const [success, setSuccess] = useState(false);
@@ -15,7 +16,7 @@ function useForm(initial = {}) {
       [value] = e.target.files;
     }
     if (type === 'checkbox') {
-      if (value == false || value == 'false') {
+      if (value === false || value === 'false') {
         value = true;
       } else {
         value = false;
@@ -25,6 +26,13 @@ function useForm(initial = {}) {
       if (e.target.previousElementSibling.type === 'radio') {
         value = e.target.previousElementSibling.value;
         name = e.target.previousElementSibling.name;
+      }
+    }
+    if (name === 'phone') {
+      if (!isPossiblePhoneNumber(value, 'US')) {
+        setErrors({ ...errors, phone: 'Must be a 10 digit phone number!' });
+      } else {
+        setErrors({ ...errors, phone: '' });
       }
     }
 

@@ -1,4 +1,10 @@
-export default function getCopyText({ name, position, pronouns, email }) {
+import parsePhoneNumber, { isPossiblePhoneNumber } from 'libphonenumber-js';
+
+export default function getCopyText({ name, position, pronouns, email, phone }) {
+  const isNumber = isPossiblePhoneNumber(phone, 'US') ? true : '';
+
+  const number = parsePhoneNumber(phone, 'US');
+
   return `
   <table padding="0" cellspacing="0" border="0" style="width: 100%;text-align: right;font-family: 'Arial', sans-serif;color: #395064;">
     <tr>
@@ -8,6 +14,10 @@ export default function getCopyText({ name, position, pronouns, email }) {
           <p style="margin: 0; font-size: 12px; text-decoration: none; color: black;">715 South Pear Orchard Road</p>
           <p style="margin: 0; font-size: 12px; text-decoration: none; color: black;">Suite 420</p>
           <p style="margin: 0; font-size: 12px; text-decoration: none; color: black;">Ridgeland, MS 39157</p>
+          ${
+            isNumber &&
+            `<a style="margin: 0; font-size: 12px; text-decoration: none; color: #5ec7b1;" href="${number.getURI()}">${number.formatNational()}</a>`
+          }
         </div>
       </td>
       <td style="text-align: left;">

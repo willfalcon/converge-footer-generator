@@ -1,6 +1,6 @@
 import React from 'react';
 import Label from './Label';
-import { useFormContext, useFocusState, getFieldOptions } from './formUtils';
+import { useFormContext, useFocusState } from './formUtils';
 import ErrorMessage from './ErrorMessage';
 
 const TextField = ({ name, label, required }) => {
@@ -8,6 +8,7 @@ const TextField = ({ name, label, required }) => {
   const { errors, inputs, handleChange } = useFormContext();
 
   const error = errors[name];
+  console.log(error);
   return (
     <Label className="field-text" isFocused={focused} htmlFor={name}>
       {label}
@@ -22,7 +23,7 @@ const TextField = ({ name, label, required }) => {
         onChange={handleChange}
         required={required}
       />
-      {error && <ErrorMessage className="error--text-field" {...error} />}
+      {error && <ErrorMessage className="error--text-field" error={error} />}
     </Label>
   );
 };

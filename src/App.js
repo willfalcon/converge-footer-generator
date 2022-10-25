@@ -10,9 +10,10 @@ import theme from './theme';
 function App() {
   const initialFields = {
     name: '',
+    email: '',
+    phone: '',
     position: '',
     pronouns: '',
-    email: '',
   };
 
   const formData = useForm(initialFields);
@@ -34,6 +35,7 @@ function App() {
               <div className="fieldset-flex-fix">
                 <TextField name="name" label="Name" required />
                 <TextField name="email" label="Email" required />
+                <TextField name="phone" label="Phone" />
                 <TextField name="position" label="Position" />
                 <TextField name="pronouns" label="Pronouns" />
               </div>
@@ -41,7 +43,7 @@ function App() {
           </FormWrapper>
         </FormContextProvider>
         <Preview {...inputs} />
-        <Button className="button" className="copy" onClick={copyCode}>
+        <Button className="button copy" onClick={copyCode}>
           Copy Code
         </Button>
         <Code {...inputs} />
