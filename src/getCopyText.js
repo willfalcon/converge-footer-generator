@@ -12,7 +12,7 @@ export default function getCopyText({ name, position, pronouns, email, phone }) 
         <div style="font-family: 'Arial', sans-serif;color: #395064;                                                   ">
           <img src="https://convergeaccess.org/wp-content/themes/converge/dist/Converge_tag_color-300.png" alt="Converge: Partners in Access" width="175" style="margin-top: -10px;" />
           <p style="margin: 0; font-size: 12px; text-decoration: none; color: black;">715 South Pear Orchard Road</p>
-          <p style="margin: 0; font-size: 12px; text-decoration: none; color: black;">Suite 420</p>
+          <p style="margin: 0; font-size: 12px; text-decoration: none; color: black;">Suite 402</p>
           <p style="margin: 0; font-size: 12px; text-decoration: none; color: black;">Ridgeland, MS 39157</p>
           ${
             isNumber &&
