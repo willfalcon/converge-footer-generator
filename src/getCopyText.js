@@ -28,7 +28,7 @@ export default function getCopyText({ name, position, pronouns, email, phone }) 
         ${position && `<p style="padding-left:20px;color:#5ec7b1;margin:0;font-weight:bold;font-size:14px;" id="position">${position}</p>`}
         ${pronouns && `<p style="padding-left: 20px; font-style: italic; margin: 0; font-size: 12px;" id="pronouns">${pronouns}</p>`}
       
-        <a style="padding-left: 20px;text-decoration: none;color: inherit;margin-bottom: 0px;display: block;font-size: 14px;" href="mailto:${email}" id="email">${email}</a>
+        <a style="padding-left: 20px;text-decoration: none;color: #395064;margin-bottom: 0px;display: block;font-size: 14px;" href="mailto:${email}" id="email">${email}</a>
         <a style="color: #008eaa;text-decoration: none;display: block;font-size: 12px;display: flex;align-items: center;margin: 0;padding-left: 20px;" href="https://www.facebook.com/convergepartners">
           <img src="https://convergeaccess.org/wp-content/uploads/2022/10/converge-social-icon-03.png" width="20" style="margin-right: 5px;" alt="Follow on Facebook: @convergepartners" />
           convergepartners
@@ -42,9 +42,9 @@ export default function getCopyText({ name, position, pronouns, email, phone }) 
           ConvergeMS
         </a>
         <p style="color: #5ec7b1; font-weight: 600;font-size: 12px;padding-left: 20px; margin: 0;">
-          <a style="color: inherit;text-decoration: none;" href="https://convergeaccess.org" target="_blank">convergeaccess.org</a>
+          <a style="color: #5ec7b1;text-decoration: none;" href="https://convergeaccess.org" target="_blank">convergeaccess.org</a>
           |
-          <a style="color: inherit;text-decoration: none;" href="https://personally.care" target="_blank">personally.care</a>
+          <a style="color: #5ec7b1;text-decoration: none;" href="https://personally.care" target="_blank">personally.care</a>
         </p>
       </td>
     </tr>
